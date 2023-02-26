@@ -1,8 +1,8 @@
 package com.driver.service.impl;
 
-import com.driver.io.entity.FoodEntity;
+//import com.driver.io.entity.FoodEntity;
 import com.driver.io.repository.FoodRepository;
-//import com.driver.model.entity.FoodEntity;
+import com.driver.model.entity.FoodEntity;
 import com.driver.model.request.FoodDetailsRequestModel;
 import com.driver.model.response.FoodDetailsResponse;
 import com.driver.model.response.OperationStatusModel;
@@ -167,7 +167,8 @@ public class FoodServiceImpl implements FoodService{
         List<FoodDto> foodDtoList = getFoods();
         List<FoodDetailsResponse> foodDetailsResponseList = new ArrayList<>();
         for(FoodDto f : foodDtoList){
-            foodDetailsResponseList.add(new FoodDetailsResponse(f.getFoodId(),f.getFoodName(),f.getFoodPrice(), f.getFoodCategory()));
+            foodDetailsResponseList.add(new FoodDetailsResponse(f.getFoodId(),f.getFoodName(),
+                    f.getFoodPrice(), f.getFoodCategory()));
         }
         return foodDetailsResponseList;
     }

@@ -1,79 +1,83 @@
-package com.driver.io.entity;
+package com.driver.model.entity;
 
-import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity(name = "orders")
+@Entity(name = "orderEntity")
 public class OrderEntity {
 
-	@Id
-	@GeneratedValue
-	private long id;
+    @Id
+    @GeneratedValue
+    private long id;
 
-	@Column(nullable = false)
-	private String orderId;
+    @Column(nullable = false)
+    private String orderId;
 
-	@Column(nullable = false)
-	private float cost;
+    @Column(nullable = false)
+    private float cost;
 
-	@Column(nullable = false)
-	private String[] items;
+    @Column(nullable = false)
+    private String[] items;
 
-	@Column(nullable = false)
-	private String userId;
-	
-	@Column(nullable = false)
-	private boolean status;
+    @Column(nullable = false)
+    private String userId;
 
-	public long getId() {
-		return id;
-	}
+    @Column(nullable = false)
+    private boolean status;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @ManyToOne
+    @JoinColumn
+    com.driver.model.entity.UserEntity userEntity;
 
-	public String getOrderId() {
-		return orderId;
-	}
+    @OneToMany(mappedBy = "orderEntity", cascade = CascadeType.ALL)
+    List<com.driver.model.entity.FoodEntity> foodEntityList;
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public float getCost() {
-		return cost;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setCost(float cost) {
-		this.cost = cost;
-	}
+    public String getOrderId() {
+        return orderId;
+    }
 
-	public String[] getItems() {
-		return items;
-	}
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
-	public void setItems(String[] items) {
-		this.items = items;
-	}
+    public float getCost() {
+        return cost;
+    }
 
-	public String getUserId() {
-		return userId;
-	}
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    public String[] getItems() {
+        return items;
+    }
 
-	public boolean isStatus() {
-		return status;
-	}
+    public void setItems(String[] items) {
+        this.items = items;
+    }
 
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 }

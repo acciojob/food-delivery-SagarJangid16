@@ -2,50 +2,54 @@ package com.driver.shared.dto;
 
 public class UserDto{
 
-	private long id;
-	private String userId;
-	private String firstName;
-	private String lastName;
-	private String email;
+    private long id;
+    private String userId;
+    private String firstName;
+    private String lastName;
+    private String email;
 
-	public long getId() {
-		return id;
-	}
+    public UserDto() {
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    }
 
-	public String getUserId() {
-		return userId;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
 }

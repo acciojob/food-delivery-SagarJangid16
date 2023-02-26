@@ -1,8 +1,7 @@
 package com.driver.service.impl;
 
-import com.driver.io.entity.OrderEntity;
 import com.driver.io.repository.OrderRepository;
-//import com.driver.model.entity.OrderEntity;
+import com.driver.model.entity.OrderEntity;
 import com.driver.model.request.OrderDetailsRequestModel;
 import com.driver.model.response.OperationStatusModel;
 import com.driver.model.response.OrderDetailsResponse;
@@ -175,7 +174,8 @@ public class OrderServiceImpl implements OrderService {
         List<OrderDto> orderDtoList = getOrders();
         List<OrderDetailsResponse> orderDetailsResponseList = new ArrayList<>();
         for(OrderDto o : orderDtoList){
-            orderDetailsResponseList.add(new OrderDetailsResponse(o.getOrderId(),o.getCost(),o.getItems(),o.getUserId(),o.isStatus()));
+            orderDetailsResponseList.add(new OrderDetailsResponse(o.getOrderId(),o.getCost(),
+                    o.getItems(),o.getUserId(),o.isStatus()));
         }
         return orderDetailsResponseList;
     }

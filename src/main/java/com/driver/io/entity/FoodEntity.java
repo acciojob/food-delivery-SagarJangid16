@@ -1,67 +1,66 @@
-package com.driver.io.entity;
+package com.driver.model.entity;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "foods")
-public class FoodEntity{
-	@Id
-	@GeneratedValue
-	private long id;
-	
-	@Column(nullable = false)
-	private String foodId;
-	
-	@Column(nullable = false)
-	private String foodName;
-	
-	@Column(nullable = false)
-	private float foodPrice;
-	
-	@Column(nullable = false)
-	private String foodCategory;
+public class FoodEntity {
+    @Id
+    @GeneratedValue
+    private long id;
 
-	public long getId() {
-		return id;
-	}
+    @Column(nullable = false)
+    private String foodId;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @Column(nullable = false)
+    private String foodName;
 
-	public String getFoodId() {
-		return foodId;
-	}
+    @Column(nullable = false)
+    private float foodPrice;
 
-	public void setFoodId(String foodId) {
-		this.foodId = foodId;
-	}
+    @Column(nullable = false)
+    private String foodCategory;
 
-	public String getFoodName() {
-		return foodName;
-	}
+    @ManyToOne
+    @JoinColumn
+    com.driver.model.entity.OrderEntity orderEntity;
 
-	public void setFoodName(String foodName) {
-		this.foodName = foodName;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public float getFoodPrice() {
-		return foodPrice;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setFoodPrice(float foodPrice) {
-		this.foodPrice = foodPrice;
-	}
+    public String getFoodId() {
+        return foodId;
+    }
 
-	public String getFoodCategory() {
-		return foodCategory;
-	}
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
 
-	public void setFoodCategory(String foodCategory) {
-		this.foodCategory = foodCategory;
-	}
+    public String getFoodName() {
+        return foodName;
+    }
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public float getFoodPrice() {
+        return foodPrice;
+    }
+
+    public void setFoodPrice(float foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public String getFoodCategory() {
+        return foodCategory;
+    }
+
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
+    }
 }

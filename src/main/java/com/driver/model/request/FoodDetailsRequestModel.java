@@ -2,31 +2,31 @@ package com.driver.model.request;
 
 public class FoodDetailsRequestModel {
 
-	private String foodName;
-	private String foodCategory;
-	private float foodPrice;
-	public String getFoodName() {
-		return foodName;
-	}
+    private String foodName;
+    private String foodCategory;
+    private float foodPrice;
+    public String getFoodName() {
+        return foodName;
+    }
 
-	public void setFoodName(String foodName) {
-		this.foodName = foodName;
-	}
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
 
-	public String getFoodCategory() {
-		return foodCategory;
-	}
+    public String getFoodCategory() {
+        return foodCategory;
+    }
 
-	public void setFoodCategory(String foodCategory) {
-		this.foodCategory = foodCategory;
-	}
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
+    }
 
-	public float getFoodPrice() {
-		return foodPrice;
-	}
+    public float getFoodPrice() {
+        return foodPrice;
+    }
 
-	public void setFoodPrice(float foodPrice) {
-		this.foodPrice = foodPrice;
-	}
+    public void setFoodPrice(float foodPrice) {
+        this.foodPrice = foodPrice;
+    }
 
 }
